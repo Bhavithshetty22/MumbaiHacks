@@ -1,0 +1,476 @@
+ /* Import your CSS from the separate file */
+        .dashboard-container {
+          min-height: 100vh;
+          color: white;
+          background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+        }
+
+        .dashboard-flex {
+          display: flex;
+          gap: 20px;
+        }
+
+        .dashboard-sidebar {
+          position: fixed;
+          top: 20px;
+          left: 20px;
+          width: 21rem;
+          height: calc(100vh - 40px);
+          background: rgba(20, 26, 42, 0.6);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 34px;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+          padding: 1.5rem;
+          z-index: 1000;
+          overflow-y: auto;
+        }
+
+        .dashboard-sidebar-header {
+          margin-bottom: 3rem;
+        }
+
+        .logo1 {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font-size: 26px;
+          font-weight: 500;
+        }
+
+        .logo-icon1 {
+          font-size: 28px;
+        }
+
+        .logo-text {
+          color: white;
+        }
+
+        .logo-subtitle {
+          color: #888;
+          font-weight: 400;
+        }
+
+        .dashboard-nav-container {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        .dashboard-nav-item {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          padding: 0.75rem 1rem;
+          border-radius: 0.5rem;
+          transition: all 0.2s ease;
+          background: none;
+          border: none;
+          cursor: pointer;
+          font-weight: 500;
+          font-size: 18px;
+        }
+
+        .dashboard-nav-item.dashboard-active {
+          background: #2563eb;
+          color: white;
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .dashboard-nav-item:not(.dashboard-active) {
+          color: #9ca3af;
+        }
+
+        .dashboard-nav-item:not(.dashboard-active):hover {
+          color: white;
+          background: #374151;
+        }
+
+        .dashboard-main-content {
+          flex: 1;
+          margin-left: calc(21rem + 40px);
+          padding: 2rem;
+          background: rgba(20, 26, 42, 0.6);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 34px;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+          margin-top: 20px;
+          margin-right: 30px;
+        }
+
+        .dashboard-header-greeting {
+          margin-bottom: 2rem;
+        }
+
+        .dashboard-greeting-title {
+          font-size: 1.875rem;
+          font-weight: 500;
+          margin-bottom: 0.5rem;
+        }
+
+        .dashboard-greeting-subtitle {
+          color: #9ca3af;
+        }
+
+        .dashboard-card {
+          background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.15) 0%,
+            rgba(255, 255, 255, 0.05) 100%
+          );
+          backdrop-filter: blur(20px) saturate(180%);
+          -webkit-backdrop-filter: blur(20px) saturate(180%);
+          border-radius: 1.5rem;
+          padding: 2rem;
+          border: 1px solid rgba(255, 255, 255, 0.25);
+          box-shadow: 
+            0 8px 32px rgba(0, 0, 0, 0.12),
+            0 4px 16px rgba(0, 0, 0, 0.08),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3);
+          transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          margin-bottom: 2rem;
+        }
+
+        .dashboard-card-title {
+          font-size: 1.25rem;
+          font-weight: 600;
+          margin-bottom: 1rem;
+        }
+
+        .dashboard-card-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 1.5rem;
+        }
+
+        .add-income-btn {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+          color: white;
+          border: none;
+          border-radius: 0.75rem;
+          padding: 0.75rem 1.5rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .add-income-btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .income-bar-chart-container {
+          height: 20rem;
+          margin-top: 1rem;
+        }
+
+        .income-count {
+          background: rgba(59, 130, 246, 0.2);
+          color: #60a5fa;
+          padding: 0.25rem 0.75rem;
+          border-radius: 1rem;
+          font-size: 0.875rem;
+          font-weight: 500;
+          margin-left: 1rem;
+        }
+
+        .income-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1rem;
+        }
+
+        .income-grid-item {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 1rem;
+          padding: 1.25rem;
+          transition: all 0.3s ease;
+        }
+
+        .income-grid-item:hover {
+          background: rgba(255, 255, 255, 0.08);
+          border-color: rgba(255, 255, 255, 0.2);
+          transform: translateY(-1px);
+        }
+
+        .income-grid-left {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          flex: 1;
+        }
+
+        .income-icon {
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 8px;
+          font-size: 20px;
+        }
+
+        .income-info {
+          flex: 1;
+        }
+
+        .income-source-name {
+          font-size: 1rem;
+          font-weight: 600;
+          color: white;
+          margin-bottom: 0.25rem;
+        }
+
+        .income-date-text {
+          font-size: 0.875rem;
+          color: #9ca3af;
+        }
+
+        .income-grid-right {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        .income-amount-display {
+          font-size: 1.125rem;
+          font-weight: 600;
+          color: #4ade80;
+        }
+
+        .income-trend-icon {
+          color: #4ade80;
+        }
+
+        .income-actions {
+          display: flex;
+          gap: 0.5rem;
+        }
+
+        .income-action-btn {
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 0.5rem;
+          padding: 0.5rem;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          color: #9ca3af;
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
+        }
+
+        .income-action-btn:hover {
+          background: rgba(255, 255, 255, 0.15);
+          color: white;
+        }
+
+        .delete-btn:hover {
+          background: rgba(239, 68, 68, 0.2);
+          color: #f87171;
+          border-color: rgba(239, 68, 68, 0.3);
+        }
+
+        .modal-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.7);
+          backdrop-filter: blur(8px);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 1000;
+        }
+
+        .modal-content {
+          background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.15) 0%,
+            rgba(255, 255, 255, 0.05) 100%
+          );
+          backdrop-filter: blur(20px);
+          border: 1px solid rgba(255, 255, 255, 0.25);
+          border-radius: 1.5rem;
+          padding: 2rem;
+          width: 90%;
+          max-width: 500px;
+          max-height: 90vh;
+          overflow-y: auto;
+        }
+
+        .modal-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 2rem;
+        }
+
+        .modal-header h2 {
+          font-size: 1.5rem;
+          font-weight: 600;
+          margin: 0;
+        }
+
+        .modal-close-btn {
+          background: none;
+          border: none;
+          color: #9ca3af;
+          cursor: pointer;
+          transition: color 0.2s ease;
+        }
+
+        .modal-close-btn:hover {
+          color: white;
+        }
+
+        .income-form {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        .form-group {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        .form-group label {
+          font-weight: 500;
+          color: rgba(255, 255, 255, 0.9);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 0.75rem;
+          padding: 0.75rem;
+          color: white;
+          font-size: 1rem;
+          transition: all 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+          outline: none;
+          border-color: #3b82f6;
+          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+          background: rgba(255, 255, 255, 0.15);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+          color: #9ca3af;
+        }
+
+        .form-actions {
+          display: flex;
+          gap: 1rem;
+          justify-content: flex-end;
+          margin-top: 1rem;
+        }
+
+        .btn-secondary {
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          color: white;
+          border-radius: 0.75rem;
+          padding: 0.75rem 1.5rem;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+          background: rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-primary {
+          background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+          border: none;
+          color: white;
+          border-radius: 0.75rem;
+          padding: 0.75rem 1.5rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        @media (max-width: 1024px) {
+          .dashboard-flex {
+            flex-direction: column;
+          }
+          
+          .dashboard-sidebar {
+            position: relative;
+            width: 100%;
+            height: auto;
+            top: auto;
+            left: auto;
+            margin: 20px;
+            z-index: auto;
+          }
+          
+          .dashboard-main-content {
+            margin-left: 0;
+            margin: 20px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .income-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .income-grid-item {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 1rem;
+          }
+
+          .income-grid-right {
+            justify-content: space-between;
+          }
+
+          .form-actions {
+            flex-direction: column;
+          }
+
+          .modal-content {
+            margin: 1rem;
+            width: calc(100% - 2rem);
+          }
+
+          .dashboard-greeting-title {
+            font-size: 1.5rem;
+          }
+          
+          .dashboard-main-content {
+            padding: 1rem;
+          }
+        }
