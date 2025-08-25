@@ -1,13 +1,10 @@
 
 import './App.css'
-import CTASection from './components/CtaSection'
-import FeaturesSection from './components/FeatureSection'
-import HowItWorksSection from './components/HowItWorksSection'
-import Landing from './components/landing'
-import ProblemSection from './components/ProblemSection'
-import SolutionSection from './components/SolutionSection'
+import MainLandingPage from './MainLandingPage';
 import Dashboard from './pages/Dashboard'
 import Income from './pages/Income'
+import ExpenseTracker from './pages/ExpenseTracker';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
 function App() {
@@ -15,8 +12,14 @@ function App() {
 
   return (
     <>
-   
-    <Dashboard/>
+    <Router>
+      <Routes>
+        <Route path="/" element={<MainLandingPage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/income" element={<Income />} />
+        <Route path="/expense" element={<ExpenseTracker />} />
+      </Routes>
+    </Router>
       </>
   )
 }

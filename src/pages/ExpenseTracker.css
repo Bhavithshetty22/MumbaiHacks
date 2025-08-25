@@ -1,0 +1,289 @@
+.expense-tracker {
+  min-height: 100vh;
+  background-color: #0a0a0a;
+  color: #ffffff;
+  padding: 24px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.card {
+  background-color: #1a1a1a;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.card-header {
+  margin-bottom: 16px;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.input {
+  background-color: #2a2a2a;
+  border: 1px solid #404040;
+  border-radius: 6px;
+  padding: 12px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #666666;
+}
+
+.input::placeholder {
+  color: #888888;
+}
+
+.amount-input-group {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.amount-input {
+  flex: 1;
+}
+
+.amount-btn {
+  background-color: #2a2a2a;
+  border: 1px solid #404040;
+  border-radius: 6px;
+  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.amount-btn:hover {
+  background-color: #3a3a3a;
+}
+
+.textarea {
+  background-color: #2a2a2a;
+  border: 1px solid #404040;
+  border-radius: 6px;
+  padding: 12px;
+  color: #ffffff;
+  font-size: 14px;
+  resize: none;
+  font-family: inherit;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: #666666;
+}
+
+.textarea::placeholder {
+  color: #888888;
+}
+
+.helper-text {
+  font-size: 12px;
+  color: #888888;
+  text-align: right;
+  margin: 0;
+}
+
+.select {
+  background-color: #2a2a2a;
+  border: 1px solid #404040;
+  border-radius: 6px;
+  padding: 12px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.select:focus {
+  outline: none;
+  border-color: #666666;
+}
+
+.select option {
+  background-color: #2a2a2a;
+  color: #ffffff;
+}
+
+.submit-btn {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+}
+
+.submit-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.plus-icon {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #333333;
+}
+
+.table th {
+  color: #888888;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.table td {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.table tr:hover {
+  background-color: #1f1f1f;
+}
+
+/* Added styles for table header with clear all button */
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Added styles for clear all button */
+.clear-all-btn {
+  background-color: #dc2626;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.clear-all-btn:hover {
+  background-color: #b91c1c;
+}
+
+/* Added styles for individual delete buttons */
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.delete-btn:hover {
+  background-color: #2a2a2a;
+}
+
+/* Added styles for empty state */
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #888888;
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .expense-tracker {
+    padding: 16px;
+  }
+
+  .container {
+    gap: 24px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .amount-input-group {
+    flex-wrap: wrap;
+  }
+
+  .table-container {
+    font-size: 12px;
+  }
+
+  .table th,
+  .table td {
+    padding: 8px;
+  }
+
+  /* Added responsive styles for table header */
+  .table-header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .clear-all-btn {
+    align-self: flex-end;
+  }
+}
